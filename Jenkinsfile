@@ -12,10 +12,11 @@ pipeline {
             }
         }
         stage('init test stage') {
-            agent
+            agent {
                 docker {
                     image 'maven'
                 }
+            }
             steps {
                 sh 'mvm --version'
                 sh 'echo MAVEN was executed'
