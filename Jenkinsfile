@@ -18,7 +18,7 @@ pipeline {
                 }
             }
             steps {
-                sh 'mvm --version'
+                sh 'mvn --version'
                 sh 'echo MAVEN was executed'
             }
         }
