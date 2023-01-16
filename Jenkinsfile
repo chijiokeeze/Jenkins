@@ -12,25 +12,15 @@ pipeline {
             }
         }
         stage('init test stage') {
+            agent
+                docker {
+                    image 'maven'
+                }
             steps {
-                echo 'init test has been executed'
+                sh 'mvm --version'
+                sh 'echo MAVEN was executed'
             }
         }
-        stage('test stage') {
-            steps {
-                echo 'test stage has is been executed'
-            }
-        }
-        stage('packaging stage') {
-            steps {
-                echo 'packaging stage has been executed'
-            }
-        }
-        stage('deployment stage') {
-            steps {
-                echo 'deployment stage has been executed'
-            }
-        }
-
-    }
+       
+    }           
 }
